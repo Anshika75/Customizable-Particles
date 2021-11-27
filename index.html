@@ -1,0 +1,375 @@
+<!-----PLEASE PLEASE PLEASE-------->
+<!-------READ THESE LINES--------->
+
+<!-----I am very new to coding so this code can appear boring ---->
+<!------This is very simple --->
+<!-----No. of days i commited to this code = 2----->
+<!----I will not request you all to upvote because that's not the reason i created it---->
+<!----My only aim to create this is self improvement---->
+<!----So please help me in my journey of self improvement by writing your opinions in comments---->
+<!----I am not afraid to face rude comments but yeah i want you all to be truthful please--->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&family=Texturina:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+     -webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
+
+}
+body{
+    overflow:hidden;
+}
+#canvas{
+    background-image:  linear-gradient(30deg, #Ffbff0 12%, transparent 12.5%, transparent 87%, #Ffbff0 87.5%, #Ffbff0), linear-gradient(150deg, #Ffbff0 12%, transparent 12.5%, transparent 87%, #Ffbff0 87.5%, #Ffbff0), linear-gradient(30deg, #Ffbff0 12%, transparent 12.5%, transparent 87%, #Ffbff0 87.5%, #Ffbff0), linear-gradient(150deg, #Ffbff0 12%, transparent 12.5%, transparent 87%, #Ffbff0 87.5%, #Ffbff0), linear-gradient(60deg, #Ffbff077 25%, transparent 25.5%, transparent 75%, #Ffbff077 75%, #Ffbff077), linear-gradient(60deg, #Ffbff077 25%, transparent 25.5%, transparent 75%, #Ffbff077 75%, #Ffbff077);
+    background-size: 20px 35px;
+    background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px;
+}
+.page2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: cadetblue;
+    height: 100%;
+    width: 100%;
+}
+.page1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: cadetblue;
+    height: 100%;
+    width: 100%;
+    background-color: #F7abc3;
+    opacity: 1;
+    background-image:  linear-gradient(#Fcd9df 2px, transparent 2px), linear-gradient(90deg, #Fcd9df 2px, transparent 2px), linear-gradient(#Fcd9df 1px, transparent 1px), linear-gradient(90deg, #Fcd9df 1px, #F7abc3 1px);
+    background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+    background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+    display: grid;
+    place-items: center;
+    transition:all 0.75s ease-in-out;
+}
+.choosecard{
+    height: 550px;
+    width: 300px;
+    border: 5px solid #31428e;
+    border-radius: 5px;
+    background-color: #d5abf7;
+    background-image:  linear-gradient(#Fcd9df 1px, transparent 1px), linear-gradient(to right, #Fcd9df 1px, #d5abf7 1px);
+    background-size: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 5px;
+    box-shadow: 0 12px 12px 1px #0005;
+}
+.choosecard h2{
+    font-family: 'Texturina', serif;
+    text-transform: uppercase;
+    font-weight: 900;
+    text-align: center;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: #31428e;
+}
+.speed{
+    font-family: 'Texturina', serif;
+    /* margin-top: 10px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}
+.speed p{
+    color: #3e73ce;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+.speed .sbox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 7px;
+    justify-content: space-evenly;
+    width:100%;
+}
+.speed .sbox .b{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 5px solid #31428e;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    padding-bottom: 5px;
+    color: #010c3a;
+}
+.speed .sbox .b:hover{
+    background-color: #61a8ed;
+    color: white;
+}
+.number{
+    font-family: 'Texturina', serif;
+    /* margin-top: 15px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}
+.number p{
+    color: #3e73ce;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+.number input{
+    font-family: 'Texturina', serif;
+    margin-top: 7px;
+    outline: none;
+    border: 2.5px solid #31428e;
+    border-radius: 5px;
+}
+::placeholder{
+    color: #4c5a6d;
+    font-family: 'Texturina', serif;
+    text-align: center;
+}
+.width{
+    font-family: 'Texturina', serif;
+    /* margin-top: 15px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}
+.width p{
+    color: #3e73ce;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+.width .wbox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 7px;
+    justify-content: space-evenly;
+    width:100%;
+}
+.width .wbox .b{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 5px solid #31428e;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    padding-bottom: 5px;
+    color: #010c3a;
+}
+.width .wbox .b:hover{
+    background-color: #61a8ed;
+    color: white;
+}
+.height{
+    font-family: 'Texturina', serif;
+    /* margin-top: 15px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}
+.height p{
+    color: #3e73ce;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+.height .hbox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 7px;
+    justify-content: space-evenly;
+    width:100%;
+}
+.height .hbox .b{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 5px solid #31428e;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    padding-bottom: 5px;
+    color: #010c3a;
+}
+.height .hbox .b:hover{
+    background-color: #61a8ed;
+    color: white;
+}
+.action{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* margin-top: 7px; */
+    justify-content: space-evenly;
+    width:100%;
+}
+.action div{
+    width: 40%;
+}
+.default, .done{
+    margin-top: 15px;
+    padding: 5px;
+    text-align: center;
+    border: 2.5px solid #31428e;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    font-family: 'Texturina', serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #010c3a;
+}
+.default:hover, .done:hover{
+    background-color: #61a8ed;
+    color: white;
+}
+</style>
+    <div class="page page2">
+        <canvas id="canvas"></canvas>
+    </div>
+    <div class="page page1" id="p1">
+        <div class="choosecard">
+            <h2>Customizing Panel</h2>
+            <div class="speed">
+                <p>Speed</p>
+                <div class="sbox">
+                
+                    <div class="b sb" id="sb1" onclick="speed = 1"><b>1</b></div>
+                    <div class="b sb" id="sb2" onclick="speed = 2"><b>2</b></div>
+                    <div class="b sb" id="sb3" onclick="speed = 3"><b>3</b></div>
+                    <div class="b sb" id="sb4" onclick="speed = 4"><b>4</b></div>
+                    <div class="b sb" id="sb5" onclick="speed = 5"><b>5</b>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="number">
+                <p>No. Of Particles</p>
+                <input type="number" placeholder="No. Of Particles" oninput="number=Math.abs(this.value)" id="no">
+            </div>
+            <div class="width">
+                <p>Width</p>
+                <div class="wbox">
+                    <div class="b wb" id="wb1" onclick="width = 15"><b>15</b></div>
+                    <div class="b wb" id="wb2" onclick="width = 25"><b>25</b></div>
+                    <div class="b wb" id="wb3" onclick="width = 35"><b>35</b></div>
+                    <div class="b wb" id="wb4" onclick="width = 45"><b>45</b></div>
+                </div>
+            </div>
+            <div class="height">
+                <p>height</p>
+                <div class="hbox">
+                    <div class="b hb" id="hb1" onclick="height = 15"><b>15</b></div>
+                    <div class="b hb" id="hb2" onclick="height = 25"><b>25</b></div>
+                    <div class="b hb" id="hb3" onclick="height = 35"><b>35</b></div>
+                    <div class="b hb" id="hb4" onclick="height = 45"><b>45</b></div>
+                </div>
+            </div>
+            <div class="action">
+            <div class="default" id="df" onclick="Done()" >Default</div>
+            <div class="done" id="dn" onclick="Done()">DONE</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var canvas, ctx;
+        var prt = [];
+        var number,speed,width,height;
+        var Dnumber = 10;
+        var Dspeed = 2;
+        var Dwidth = 20;
+        var Dheight = 20;
+        var p1 = document.getElementById("p1");
+        function Done(){
+            number = number || Dnumber;
+            speed = speed || Dspeed;
+            width = width || Dwidth;
+            height = height || Dheight;
+            
+            number = Math.abs(Math.floor(number));
+            p1.style.transform = "translateX(200%)";
+             canvas = document.getElementById("canvas");
+            ctx = canvas.getContext("2d");
+            canvas.height = innerHeight;
+            canvas.width = innerWidth;
+            for(var i=0; i<number; i++){
+                prt.push(new part(
+                    random(width, canvas.width - 30),
+                    random(height, canvas.height - 30)
+                ))
+            }
+            anim();
+        } 
+        class part{
+            constructor(x,y){
+                this.x = x;
+                this.y = y;
+                this.sx = speed;
+                this.sy = speed;
+                this.wid = width;
+                this.ht = height;
+                this.clr = `rgb(${random(0,255)}, ${random(0,255)}, ${random(0,255)})`; 
+            }
+            drw(){
+                ctx.fillStyle = this.clr;
+                ctx.fillRect(this.x, this.y, this.wid, this.ht);
+            }
+            upd(){
+                this.x += this.sx;
+                this.y += this.sy;
+
+                if(this.x + this.wid >= canvas.width || this.x < 0){
+                    this.sx = -this.sx;
+                    this.clr = `rgb(${random(0,255)}, ${random(0,255)}, ${random(0,255)})`; 
+                }
+                if(this.y + this.ht >= canvas.height || this.y < 0){
+                    this.sy = -this.sy;
+                    this.clr = `rgb(${random(0,255)}, ${random(0,255)}, ${random(0,255)})`; 
+                }
+                
+            }
+        }
+        function random(min, max){
+            return Math.floor(min + (Math.random()*(max-min)));
+        }
+        function anim(){
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            for(var i=0; i<prt.length;i++){
+                prt[i].upd();
+                prt[i].drw();
+            }
+            requestAnimationFrame(anim);
+        }
+        
+    </script>
+</body>
+</html>
